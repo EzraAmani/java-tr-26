@@ -5,7 +5,11 @@ public class Main {
         int a = 15;
         int b = 4;
         int c = (a * b) / 3;
+
         System.out.println((a * b / 2) * c);
+        System.out.println(b++);
+        System.out.println(b * a);
+
     }
 
 }
