@@ -42,6 +42,8 @@ public class Main {
         }
 
         System.out.printf("Result: " + num1 + " " + operator + " " + num2 + " = " + result);
+        scanner.close();
+
     }
 
 }
