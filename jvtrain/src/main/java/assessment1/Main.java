@@ -7,7 +7,8 @@ public class Main {
         // problem1();
         // problem2();
         // problem3();
-        problem4();
+        // problem4();
+        // problem5();
 
     }
 
@@ -87,6 +88,19 @@ public class Main {
         }
 
         scanner.close();
+
+    }
+
+    public static void problem5() {
+        int rows = 5;
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+
+        }
 
     }
 
