@@ -1,4 +1,4 @@
-package assessment1;
+package assessments.assessment1;
 
 import java.util.Scanner;
 

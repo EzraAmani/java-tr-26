@@ -5,7 +5,7 @@ public class User {
     String membership;
 
     void set_name(String name) {
-        _name = name;
+        this._name = name;
     }
 
     String get_name() {
