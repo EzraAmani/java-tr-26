@@ -21,6 +21,11 @@ public class Main {
         return ar;
     }
 
+    public static void areafull(int l, int w) {
+        int ar = l * w;
+        System.out.println(ar);
+    }
+
     public static void tocelsius(int f) {
         int c = (f - 32) * 5 / 9;
         System.out.println(f + "  to celsius is " + c);
