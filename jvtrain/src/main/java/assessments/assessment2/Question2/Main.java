@@ -10,5 +10,7 @@ public class Main {
         emp1.displayInfo();
 
         dev1.displayInfo();
+
+        mgr1.displayInfo();
     }
 }

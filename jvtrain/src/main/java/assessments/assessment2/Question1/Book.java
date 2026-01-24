@@ -16,7 +16,7 @@ public class Book {
         this.isAvailable = true;
     }
 
-    // Getters and Setters with validation
+    // Getters and Setters and I added validation
 
     public String getTitle() {
         return title;
@@ -66,7 +66,7 @@ public class Book {
         return isAvailable;
     }
 
-    // Borrow book method
+    // Borrow book
     public void borrowBook() {
         if (isAvailable) {
             isAvailable = false;
@@ -76,7 +76,7 @@ public class Book {
         }
     }
 
-    // Return book method
+    // Return book
     public void returnBook() {
         if (!isAvailable) {
             isAvailable = true;

@@ -5,7 +5,7 @@ public class SavingsAccount extends BankAccount {
 
     public SavingsAccount(String accountNumber, String accountHolder,
             double balance, double interestRate) {
-        super(accountNumber, accountHolder, balance); // call parent constructor
+        super(accountNumber, accountHolder, balance);
         this.interestRate = interestRate;
     }
 

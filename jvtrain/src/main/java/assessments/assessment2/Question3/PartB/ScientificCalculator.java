@@ -6,7 +6,7 @@ public class ScientificCalculator extends Calculator {
     @Override
     public int add(int a, int b) {
         System.out.println("ScientificCalculator: Adding two integers");
-        return super.add(a, b); // call parent version
+        return super.add(a, b); // I call parent using super
     }
 
     // New scientific methods
