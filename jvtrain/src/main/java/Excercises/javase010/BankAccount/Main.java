@@ -6,14 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Bank bank = new Bank();
 
-        // some sample accounts for testing
         try {
             // Create a Savings Account
             SavingsAccount johnAccount = new SavingsAccount(
-                    "John Doe", // Account holder name
-                    1000.0, // Initial balance (must be ≥ $100)
-                    3.5 // Interest rate in %
-            );
+                    "John Doe",
+                    1000.0,
+                    3.5);
 
             System.out.println("Account created successfully!");
             System.out.println("Account Number: " + johnAccount.getAccountNumber());
