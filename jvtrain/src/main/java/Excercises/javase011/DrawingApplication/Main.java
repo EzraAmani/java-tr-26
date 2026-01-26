@@ -7,7 +7,6 @@ public class Main {
         Shape square = new Square();
         Shape triangle = new Triangle();
 
-        // Draw all shapes - POLYMORPHISM!
         Shape[] shapes = { circle, square, triangle };
 
         System.out.println("=== Drawing Shapes ===");
