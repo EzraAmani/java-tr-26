@@ -3,9 +3,13 @@ package OOP;
 public class Main {
     public static void main(String[] args) {
 
-        Student student1 = new Student("John", 12);
+        // Student student1 = new Student("John", 12);
 
-        student1.displayInfo();
+        // student1.displayInfo();
+
+        Animal dog1 = new Animal("Bosco");
+
+        dog1.makesound();
 
     }
 
