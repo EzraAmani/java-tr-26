@@ -2,7 +2,7 @@ package bankagain;
 
 public abstract class BankAccount {
 
-    // objects
+    // attributes
     private String accountNumber;
     private String accountHolder;
     protected double balance;

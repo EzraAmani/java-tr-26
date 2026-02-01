@@ -1,0 +1,47 @@
+1. Constructor Issues
+Constructor only sets employeeName but not companyName or initial salary
+
+2. Setter Method Problems
+There is a bug: salary = salary; assigns parameter to itself instead of instance variable
+
+Should be this.salary = salary;
+
+Failure: When salary is negative, it prints a message but doesn't prevent the invalid assignment
+
+Salary remains unchanged or becomes 0
+
+There is no else clause to handle salary assignment
+
+3. calculateBonus() Method Issues
+Return type mismatch: Method is declared void but tries to return a value
+
+It should be public double calculateBonus()
+
+Salary is also not initialized before use
+
+this could lead to logical errors
+
+4. Class Design Problems
+I think the class EmployeeManagement has been poorly named as it sounds like a system/utility class, but it's representing an individual employee
+
+Should be named Employee
+
+Static field is misused as companyName is static but not initialized anywhere
+
+If shared by all employees, should be initialized (e.g., in static block or constructor)
+
+Missing getter methods as there is no way to retrieve employeeName or salary values
+
+Missing encapsulation as companyName is public (should likely be private with getter/setter)
+
+5. Code Quality Issues
+There is no input validation in constructor as name could be null or empty
+
+There is inconsistent naming as Parameter name vs field employeeName
+
+The number 0.1 in bonus calculation should be a named constant
+
+6. Potential Runtime Problems
+employeeName could be null if passed to constructor
+
+Division by zero is possible if bonus calculation were percentage-based with variable rate
