@@ -1,7 +1,33 @@
 package lamda;
 
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class Main {
     public static void main(String[] args) {
+        // getPrinterInLamda();
+        commonBuiltInFunctionalInterfaces();
+
+    }
+
+    private static void functions() {
+        Function<String, Integer> function = t -> t.trim().length();
+
+        List<String> myListOfStrings = List.of("I love java programming", "java is cool", "MyPassword");
+
+        for (String string : myListOfStrings) {
+            System.out.println(string + "has trimmed length -> " + function.apply(string));
+        }
+
+    }
+
+    private static void commonBuiltInFunctionalInterfaces() {
+        System.out.println("======functions=======");
+        functions();
+    }
+
+    private static void getPrinterInLamda() {
         Export pdfExport = new PdfExport();
         pdfExport.export("I have learnt interesting topics");
 
@@ -31,6 +57,33 @@ public class Main {
         };
 
         printerInLamda.print("love", "flash");
+    }
+
+    private static void predicates() {
+
+        // Predicate<Integer> isEvenPredicate = (Integer t) -> {
+        // // t % 2 == 0;
+
+        // boolean isEven = false;
+        // if (t % 2 == 0) {
+        // isEven = true;
+        // }
+        // return isEven;
+
+        // };
+
+        Predicate<Integer> isEvenPredicate = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer t) {
+                return t % 2 == 0;
+            }
+        };
+
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
+
+        for (Integer num : numbers) {
+            System.out.println(num + " is even -> " + isEvenPredicate.test(num));
+        }
 
     }
 
