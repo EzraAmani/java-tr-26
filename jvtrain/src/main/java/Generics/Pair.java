@@ -9,8 +9,8 @@ public class Pair<K, V> {
     private V value;
 
     public Pair(K key, V value) {
-        this.key = key;
-        this.value = value;
+        this.setKey(key);
+        this.setValue(value);
     }
 
     public K getKey() {
