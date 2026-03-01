@@ -1,0 +1,54 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: generic
+      MYSQL_USER: generic
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db-scripts:/usr/db-scripts
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+  
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres      # Add this (or change to your preferred username)
+      POSTGRES_PASSWORD: generic
+      POSTGRES_DB: generic      
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgresdb-data:/data/db
+    ports:
+      - 5433:5432
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8083:8080
+  
+volumes:
+  mysql_data:
+  postgresdb-data:

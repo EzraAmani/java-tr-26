@@ -9,12 +9,27 @@ public abstract class BankAccount {
 
     // constructor method
     public BankAccount(String accountNumber, String accountHolder) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
+        try {
+            setAccountHolder(accountHolder);
+        } catch (InvalidAccountHolderException e) {
+            System.out.println(e.getMessage());
+        }
+
+        setAccountNumber(accountNumber);
         this.balance = 0.0;
     }
 
-    // to deposit some money
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
 
     public void deposit(double amount) {
         if (amount > 0) {
@@ -28,10 +43,11 @@ public abstract class BankAccount {
 
     public abstract void withdraw(double amount);
 
-    public void setAccountHolder(String accountHolder) {
-        if (accountHolder != null && !accountHolder.isEmpty()) {
-            this.accountHolder = accountHolder;
+    public void setAccountHolder(String accountHolder) throws InvalidAccountHolderException {
+        if (accountHolder != null && accountHolder.length() > 5) {
+            throw new InvalidAccountHolderException("Account holder name cannot exceed 5 characters");
         }
+        this.accountHolder = accountHolder;
     }
 
     public double getBalance() {

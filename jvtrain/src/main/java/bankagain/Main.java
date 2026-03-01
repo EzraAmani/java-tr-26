@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         // reference type //object
         // this is the instance
-        BankAccount account6 = new SavingsAccount("123456", "Ezra", 0.5);
+        BankAccount account6 = new SavingsAccount("123456", "Ezratheman", 0.5);
 
         account6.deposit(10000);
         // account6.displayInfo();
@@ -12,6 +12,8 @@ public class Main {
         // System.out.println(account6.getBalance());
 
         account6.withdraw(2000);
+
+        account6.toString();
 
     }
 
